@@ -3,33 +3,65 @@ const Reports = () => {
     const [reportsData, setReportsData] = React.useState();
     const [openError, setOpenError] = React.useState(false);
     const [errorMessage, setErrorMessage] = React.useState();
+    const [filteredData, setFilteredData] = React.useState('');
+    const dispatch = useDispatch();
 
     React.useEffect(() => {
-        OtherServices.getReports(page, 10) // Assuming 10 as a default page size
-            .then(res => setReportsData(res.data))
-            .catch(err => { setOpenError(true); setErrorMessage(err); })
-    }, [page]);
+        dispatch({ type: "SET_LOADING_TRUE" });
+        OtherServices.getReports(page, 10, filteredData)
+            .then(res => { dispatch({ type: "SET_LOADING_FALSE" }); setReportsData(res.data); })
+            .catch(err => { dispatch({ type: "SET_LOADING_FALSE" }); setOpenError(true); setErrorMessage(err); })
+    }, [filteredData, page]);
 
     return (
         <Wrapper>
-            <h2>Reports</h2>
-            <table>
-          		<thead>
-            		<tr>
-            		<TableFirstorderBy={1}/>
-              		<tdstyle={{minWidth:"500px"}}>{t("npa_name")}</td>
-              		<tdstyle={{minWidth:"180px"}}>{t("npa_date")}</td>
-              		<tdstyle={{minWidth:"300px"}}>{t("npa_register_number")}</td>
-              		<tdstyle={{minWidth:"300px"}}>{t("experts")}</td>
-              		<tdstyle={{minWidth:"500px"}}>{t("notice_project")}</td>
-              		<tdstyle={{minWidth:"500px"}}>{t("notice_npa")}</td>
-              		<td></td>
-              		<tdclassName={'last'}></td>
-            		</tr>
-          		</thead>
-            </table>
+            
+           <h2>{t("reports")} </h2>
+            <div className='container reports-container'>
+                <div className='search-panel'>
+                    <button className='c-btn c-btn-secondary' onClick={() => setShowFilter(!showFilter)}>Фильтр {IconsContent.Filter()}</button>
+                    <div className='search-panel__input'>
+                        <input type="text" placeholder={`${t("search")}`} onChange={(e) => { setTimeout(() => { setFilteredData(`filter[name]=${e.target.value}`) }, 1000) }} />
+                        {IconsContent.Search()}
+                    </div>
+                    {reportsData2 && filteredData && filteredData !== "filter[name]=" && <ExportExcelNPA npaData={reportsData2} fileName={'ExcelNewExport'} />}
+                </div>
+                <div className='table_wrapper'>
+                    <table >
+                        <thead>
+                            <tr>
+                                <TableFirst orderBy={1} />
+                                <td style={{ minWidth: "500px" }}>{t("npa_name")}</td>
+                                <td style={{ minWidth: "180px" }}>{t("npa_date")}</td>
+                                <td style={{ minWidth: "300px" }}>{t("npa_register_number")}</td>
+                                <td style={{ minWidth: "300px" }}>{t("experts")}</td>
+                                <td style={{ minWidth: "500px" }}>{t("notice_project")}</td>
+                                <td style={{ minWidth: "500px" }}>{t("notice_npa")}</td>
+                                <td></td>
+                                <td className={'last'}></td>
+                            </tr>
+                        </thead>
+                        {reportsData && reportsData.data.map((item, index) => {
+                            return (
+                                <tbody key={index}>
+                                    <tr >
+                                        <td>{item.id}</td>
+                                        <td >{item?.npa_data.locales[i18n.language as keyof LocalesName]}</td>
+                                        <td style={{ textAlign: "center" }}>{item?.npa_data.date_of_adoption.slice(0, 10)}</td>
+                                        <td style={{ textAlign: "center" }}>{item?.npa_data.accepted_npa_number}</td>
+                                        <td >{item?.experts.map((item: string, index: number) => <span key={index + 27}>{item}</span>)}</td>
+                                        <td style={{ textAlign: "center" }}>{item?.project_recommendations}</td>
+                                        <td style={{ textAlign: "center" }}>{item?.accepted_recommendations}</td>
+                                        <td onClick={() => { setModalEditNPAData(true); setEditNPAData(item) }}>{IconsContent.Edit()}</td>
+                                    </tr>
+                                </tbody>
+                            )
+                        })}
+                    </table>
+                </div >
+
+            <Filter setFilterData={setFilteredData} />
             {openError && <ModalError open={openError} close={setOpenError} errorMessage={errorMessage} />}
         </Wrapper>
     );
 }
-
