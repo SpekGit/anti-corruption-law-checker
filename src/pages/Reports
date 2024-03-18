@@ -1,0 +1,35 @@
+const Reports = () => {
+    const [page, setPage] = React.useState(1);
+    const [reportsData, setReportsData] = React.useState();
+    const [openError, setOpenError] = React.useState(false);
+    const [errorMessage, setErrorMessage] = React.useState();
+
+    React.useEffect(() => {
+        OtherServices.getReports(page, 10) // Assuming 10 as a default page size
+            .then(res => setReportsData(res.data))
+            .catch(err => { setOpenError(true); setErrorMessage(err); })
+    }, [page]);
+
+    return (
+        <Wrapper>
+            <h2>Reports</h2>
+            <table>
+          		<thead>
+            		<tr>
+            		<TableFirstorderBy={1}/>
+              		<tdstyle={{minWidth:"500px"}}>{t("npa_name")}</td>
+              		<tdstyle={{minWidth:"180px"}}>{t("npa_date")}</td>
+              		<tdstyle={{minWidth:"300px"}}>{t("npa_register_number")}</td>
+              		<tdstyle={{minWidth:"300px"}}>{t("experts")}</td>
+              		<tdstyle={{minWidth:"500px"}}>{t("notice_project")}</td>
+              		<tdstyle={{minWidth:"500px"}}>{t("notice_npa")}</td>
+              		<td></td>
+              		<tdclassName={'last'}></td>
+            		</tr>
+          		</thead>
+            </table>
+            {openError && <ModalError open={openError} close={setOpenError} errorMessage={errorMessage} />}
+        </Wrapper>
+    );
+}
+
