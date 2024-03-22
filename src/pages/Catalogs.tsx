@@ -50,6 +50,57 @@ const Catalogs = () => {
     const orderby5 = useSelector((state: any) => state.orderBy5)
     const orderby6 = useSelector((state: any) => state.orderBy6)
 
+    const [open, setOpen] = React.useState<boolean>(false)
+    const [openAddCatalog, setOpenAddCatalog] = React.useState(false)
+
+    React.useEffect(() => {
+        // dispatch({ type: "SET_LOADING_TRUE", payload: true })
+        OtherServices.getDocumentTypes(pageDC, perPage, filterDataDC, orderby1)
+            .then((response: any) => { dispatch({ type: "SET_LOADING_FALSE", payload: false }); setDocumentTypes(response.data); })
+            .catch(err => console.log(err))
+    }, [pageDC, filterDataDC, orderby1])
+
+    React.useEffect(() => {
+        // dispatch({ type: "SET_LOADING_TRUE", payload: true })
+        OtherServices.getAuthorityDevelopers(pageAD, perPage, filterDataAD, orderby2)
+            .then((response: any) => { dispatch({ type: "SET_LOADING_FALSE", payload: false }); setAuthoritiesDevelopers(response.data) })
+            .catch(err => console.log(err))
+    }, [pageAD, filterDataAD, orderby2])
+
+    React.useEffect(() => {
+        // dispatch({ type: "SET_LOADING_TRUE", payload: true })
+        OtherServices.getBranchOfLegislation(pageBOL, perPage, filterDataBOL, orderby3)
+            .then((response: any) => { dispatch({ type: "SET_LOADING_FALSE", payload: false }); setBranchesOfLegislations(response.data) })
+            .catch(err => console.log(err))
+    }, [pageBOL, filterDataBOL, orderby3])
+
+    React.useEffect(() => {
+        // dispatch({ type: "SET_LOADING_TRUE", payload: true })
+        OtherServices.getCatos(pageCT, perPage, filterDataCT, orderby4)
+            .then((response: any) => { dispatch({ type: "SET_LOADING_FALSE", payload: false }); setCatos(response.data) })
+            .catch(err => console.log(err))
+    }, [pageCT, filterDataCT, orderby4])
+
+    React.useEffect(() => {
+        // dispatch({ type: "SET_LOADING_TRUE", payload: true })
+        OtherServices.getRiskFactors(pageRF, perPage, filterDataRF, orderby5)
+            .then((response: any) => { dispatch({ type: "SET_LOADING_FALSE", payload: false }); console.log(response); setRiskFactors(response.data) })
+            .catch(err => console.log(err))
+    }, [pageRF, filterDataRF, orderby5])
+
+    React.useEffect(() => {
+        // dispatch({ type: "SET_LOADING_TRUE", payload: true })
+        OtherServices.getCorruptionRisks(pageCR, perPage, filterDataCR, orderby6)
+            .then((response: any) => { dispatch({ type: "SET_LOADING_FALSE", payload: false }); console.log(response); setCorruptionRisks(response.data) })
+            .catch(err => console.log(err))
+    }, [pageCR, filterDataCR, orderby6])
+
+
+    let renderCatalog = asideItem == 1 ? documentTypes : asideItem == 2 ? authoritiesDevelopers : asideItem == 3 ? branchesOfLegislations : asideItem == 4 ? catos : asideItem == 5 ? riskFactors : corruptionRisks
+    let page = asideItem == 1 ? pageDC : asideItem == 2 ? pageAD : asideItem == 3 ? pageBOL : asideItem == 4 ? pageCT : asideItem == 5 ? pageRF : pageCR
+    let setPage = asideItem == 1 ? setPageDC : asideItem == 2 ? setPageAD : asideItem == 3 ? setPageBOL : asideItem == 4 ? setPageCT : asideItem == 5 ? setPageRF : setPageCR
+    let asideItemName = asideItem == 1 ? t("document_type") : asideItem == 2 ? t("authority_developer") : asideItem == 3 ? t("branch_of_legiclation") : asideItem == 4 ? t("catos") : asideItem == 5 ? t("risk_factors") : t("corruption_risks")
+    let setFilterData = asideItem == 1 ? setFilterDataDC : asideItem == 2 ? setFilterDataAD : asideItem == 3 ? setFilterDataBOL : asideItem == 4 ? setFilterDataCT : asideItem == 5 ? setFilterDataRF : setFilterDataCR
 
     return (
         <Wrapper>
