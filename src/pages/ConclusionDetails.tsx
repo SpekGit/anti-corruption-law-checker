@@ -1,48 +1,51 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 
-class ConclusionEdit extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            loading: false,
-            error: null,
-            conclusionData: null,
+const ConclusionEdit = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
+    const dispatch = useDispatch();
+    const { t } = useTranslation();
+
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
+    const [conclusionData, setConclusionData] = useState(null);
+
+    const conclusionId = location.pathname.split('/').pop(); // Simplified extraction of ID
+
+    useEffect(() => {
+        const fetchConclusion = async () => {
+            setLoading(true);
+            try {
+                // Placeholder for fetch call
+                const data = await fetch(`/api/conclusions/${conclusionId}`).then(res => res.json());
+                setConclusionData(data);
+            } catch (error) {
+                setError(error.toString());
+            } finally {
+                setLoading(false);
+            }
         };
-    }
 
-    componentDidMount() {
-        this.fetchData();
-    }
+        fetchConclusion();
+    }, [conclusionId]);
 
-    fetchData() {
-        // Basic data fetching logic
-        this.setState({ loading: true });
-        fetch('/api/conclusion')
-            .then(response => response.json())
-            .then(data => this.setState({ conclusionData: data, loading: false }))
-            .catch(error => this.setState({ error, loading: false }));
-    }
+    if (loading) return <div>Loading...</div>;
+    if (error) return <div>Error: {error}</div>;
 
-    render() {
-        const { loading, error, conclusionData } = this.state;
-
-        if (loading) return <p>Loading...</p>;
-        if (error) return <p>Error loading conclusion data</p>;
-
-        return (
-            <div>
-                {conclusionData ? (
-                    <div>
-                        {/* Simplified rendering of conclusion data */}
-                        <h1>{conclusionData.title}</h1>
-                        <p>{conclusionData.description}</p>
-                    </div>
-                ) : (
-                    <p>No data found</p>
-                )}
-            </div>
-        );
-    }
-}
+    return (
+        <div>
+            {conclusionData && (
+                <div>
+                    <h1>{t('conclusion_title')}</h1>
+                    <h1>{conclusionData.title}</h1>
+                    <p>{conclusionData.description}</p>
+                </div>
+            )}
+        </div>
+    );
+};
 
 export default ConclusionEdit;
