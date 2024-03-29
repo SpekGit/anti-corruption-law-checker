@@ -204,3 +204,174 @@ export interface IConclusion {
     }
   }
 }
+export interface IConclusionDetails {
+  comments: [
+    {
+      text: string
+    }
+  ];
+  project: IProject
+  deadline: string;
+  comment: string | null
+  id: number | null;
+  status: {
+    id: number
+    locales: {
+      name: LocalesName
+    }
+  }
+  expert: {
+    full_name: string
+  }
+  detailed_analysis_of_risk_factors: [
+    {
+      id: number
+      locales: {
+        article: LocalesName
+        corruption_risks: LocalesName[]
+        part: LocalesName
+        point: LocalesName
+        remark: LocalesName
+        risk_factor_name: LocalesName
+        risk_factor_id: number
+        recommendations: LocalesName
+        sub_paragraph: LocalesName
+        the_text_of_the_problematic_norm: LocalesName
+      }
+    }
+  ]
+  locales: {
+    availability_of_competence_of_the_developers_authority: LocalesName;
+    competence: LocalesName;
+    compliance_with_the_requirements: LocalesName;
+    conducting_regulatory_impact_analysis: LocalesName;
+    consequences_in_the_form_of_human_rights_violations: LocalesName;
+    corrector_document_src: LocalesName
+    expert_document_src: LocalesName;
+    financial_and_economic_justification: LocalesName;
+    legislative_consistency_of_the_project: LocalesName;
+    output_text: LocalesName;
+    public_interest_and_private_interests: LocalesName;
+    sufficiency_of_argumentation: LocalesName;
+    the_language_of_the_npa_project: LocalesName
+    the_stated_and_real_purpose_of_the_project: LocalesName;
+    translater_document_src: LocalesName
+  }
+  note: string
+  remark: string
+}
+
+export interface IRiskFactors {
+  id: number;
+}
+
+export interface INewUser {
+  email?: string;
+  password?: string;
+  full_name?: string;
+  phone?: string;
+  role?: string;
+  branch_of_legislations?: ProjectItem[];
+}
+
+export interface IUser {
+  available: number;
+  full_name: string;
+  tin: string;
+  birth_date: string;
+  email: string;
+  id: number;
+  note?: string;
+  phone: string;
+  locales: {
+    academic_degree: LocalesName
+    job_title: LocalesName
+    scientific_title: LocalesName
+  }
+  roles: [
+    {
+      slug: string;
+      locales: {
+        name: LocalesName
+      }
+    }
+  ]
+  branch_of_legislations: [
+    {
+      id: number;
+      locales: {
+        name: LocalesName
+      }
+    }
+  ]
+
+}
+
+export interface INpa {
+  data: [
+    {
+      id: number;
+      authority_developer_name: LocalesName;
+      base_cost: number;
+      coordinator_cost: number;
+      document_type_group: LocalesName;
+      document_type_name: LocalesName;
+      expert_count: number;
+      expert_signed_date: string;
+      experts: [
+        {
+          id: number;
+          full_name: string;
+          remark_count: number
+        }
+      ]
+      name: LocalesName;
+      risk_cost: number;
+      remark_cost: number
+    }
+  ];
+  meta: {
+    per_page: number;
+    total: number
+  }
+}
+export interface INPAReport {
+  data: INPA[],
+  meta: {
+    per_page: number;
+    total: number
+  }
+}
+export interface ICoverLetter {
+  data: [
+    {
+      id: string,
+      signed: boolean,
+
+    }
+  ],
+  meta: {
+    per_page: number;
+    total: number
+  }
+}
+export interface ICoverLetter {
+  document_type_and_developer_kk: string,
+  document_type_and_developer_ru: string,
+  number_of_application_sheets: string,
+  leader_full_name: string
+}
+
+export interface INPA {
+  id: number,
+  experts: string[],
+  npa_data: {
+    npa_link: string,
+    accepted_npa_number: string,
+    date_of_adoption: string,
+    locales: LocalesName
+  }
+  accepted_recommendations: number,
+  project_recommendations: number
+
+}
