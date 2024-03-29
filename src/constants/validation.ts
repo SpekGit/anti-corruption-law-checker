@@ -169,6 +169,99 @@ export const AddUser = yup.object().shape({
     }).required('error_input')
   }),
 })
+export const EditUser = yup.object().shape({
+  full_name: yup.string().required("error_input"),
+  email: yup.string().email("error_input_email").required("error_input"),
+  tin: yup.string().required("error_input").test({
+    test: (value) => {
+      if (!value) {
+        return false;
+      } else if (value.replace(/_/g, "").length !== 12) {
+        return false;
+      }
+      return true;
+    },
+    message: "ИИН должен содержать 12 символов",
+  }),
+  password: yup.string().required("error_input")
+    .matches(/^([A-Za-z0-9.-\u00C0-\u00D6\u00D8-\u00f6\u00f8-\u00ff\s]*)$/gi, 'Пароль должен содержать только латинские буквы'),
+  // scientific_title_kk: yup.string().when('role', {is: 'expert',then: yup.string().required('error_input'),}),
+  // scientific_title_ru: yup.string().when('role', { is: 'expert', then: yup.string().required('error_input') }),
+
+  // academic_degree_kk: yup.string().when('role', { is: 'expert', then: yup.string().required('error_input') }),
+  // academic_degree_ru: yup.string().when('role', { is: 'expert', then: yup.string().required('error_input') }),
+  branch_of_legislations: yup.array().when('role', {
+    is: 'expert', then: yup.array().test({
+      test: (value) => {
+        if (value?.length == 0) {
+          return false;
+        } else {
+          return true;
+        }
+      },
+      message: "error_input",
+    }).required('error_input')
+  }),
+
+  phone: yup.string().when('role', {
+    is: 'expert' || 'coordinator', then: yup.string().test({
+      test: (value) => {
+        if (!value) {
+          return false;
+        } else if (value.replace(/_/g, "").length !== 18) {
+          return false;
+        }
+        return true;
+      },
+      message: "Некорректный формат номера",
+    })
+  }),
+})
+
+
+export const AddCoordinator = yup.object().shape({
+  coordinator_id: yup.number().required("error_input")
+})
+export const AddCorrector = yup.object().shape({
+  corrector_id: yup.number().required("error_input")
+})
+export const AddTranslator = yup.object().shape({
+  translator_id: yup.number().required("error_input")
+})
+export const AddCorrectorFile = yup.object().shape({
+  uploads: yup.mixed().required("error_input_file корректировки").test("error_input!", "error_input_file", value => value[0]),
+})
+export const AddTranslatorFile = yup.object().shape({
+  uploads: yup.mixed().required("error_input_file перевода").test("error_input!", "error_input_file", value => value[0]),
+})
+export const AddCoverLetter = yup.object().shape({
+  document_type_and_developer_kk: yup.string().nullable().required("error_input"),
+  document_type_and_developer_ru: yup.string().nullable().required("error_input"),
+  number_of_application_sheets: yup.string().nullable().required("error_input"),
+  leader_full_name: yup.string().nullable().required("error_input"),
+})
+export const AddNPAData = yup.object().shape({
+  npa_link: yup.string().required("error_input"),
+  accepted_npa_number: yup.string().required("error_input"),
+  accepted_npa_name_kk: yup.string().required("error_input"),
+  accepted_npa_name_ru: yup.string().required("error_input"),
+  accepted_recommendations: yup.string().required("error_input"),
+  date_of_adoption: yup.string()
+    .test({
+      test: (value) => {
+        if (value == "Invalid date") {
+          return false;
+        } else {
+          return true;
+        }
+      },
+      message: "Некорректный формат даты",
+    }).required("error_input"),
+})
+export const AddOpinion = yup.object().shape({
+  dissenting_opinion_of_the_coordinator_kk: yup.string().required("error_input"),
+  dissenting_opinion_of_the_coordinator_ru: yup.string().required("error_input"),
+})
 
 
 
