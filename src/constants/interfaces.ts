@@ -107,3 +107,100 @@ export interface IProject {
   translator: IUserRole
 }
 
+
+export interface IInput {    //InputComponent
+  register: Function;
+  type?: string;
+  fileNotice?: string;
+  required: boolean;
+  edited: boolean;
+  title: string;
+  name: string;
+  error: any;
+  defaultValue?: string | number | null;
+  max?: number;
+  accept?: string;
+  multiple?: boolean;
+  submited?: boolean;
+  onInput?: Function;
+  mask?: string
+}
+export interface IChangeProject { //Change project interface
+  projectData: IProject;
+  editProject: boolean
+}
+/** Provides a way to easily construct a set of key/value pairs representing form fields and their values, which can then be easily sent using the XMLHttpRequest.send() method. It uses the same format a form would use if the encoding type were set to "multipart/form-data". */
+export interface IFormData {
+  append(name: string, value: string | Blob, fileName?: string): void;
+  delete(name: string): void;
+  get(name: string): FormDataEntryValue | null;
+  getAll(name: string): FormDataEntryValue[];
+  has(name: string): boolean;
+  set(name: string, value: string | Blob, fileName?: string): void;
+  forEach(callbackfn: (value: FormDataEntryValue, key: string, parent: FormData) => void, thisArg?: any): void;
+}
+export interface INewProject {
+  re_examination: string;
+  note: string;
+  status_id: number;
+  document_type_id: string;
+  name_kk: string;
+  name_ru: string;
+  published: string;
+  date_of_receipt_of_the_draft_regulatory_legal_act: string;
+  purpose_and_structure_of_the_draft_regulatory_legal_act_kk: string;
+  purpose_and_structure_of_the_draft_regulatory_legal_act_ru: string;
+  documents_submitted_for_scientific_anti_corruption_expertise_kk: string;
+  documents_submitted_for_scientific_anti_corruption_expertise_ru: string;
+  the_subject_and_goals_of_scientific_anti_corruption_expertise_kk: string;
+  the_subject_and_goals_of_scientific_anti_corruption_expertise_ru: string;
+  incoming_letter_number: string;
+  outgoing_letter_number: string;
+  outgoing_mail_date: string;
+  number_of_pages: string;
+  branch_of_legislations: number[];
+  uploads_kk: any;
+  uploads_ru: any;
+  uploads_ai: any
+}
+
+export interface IProjectsPublushed {
+  [x: string]: any;
+  id: number;
+  authority_developer: ProjectItem;
+  branch_of_legislations: ProjectItem[];
+  locales: {
+    name: LocalesName;
+    final_conclusion: LocalesName
+  };
+  published_at: string | null;
+  cover_letter: string | null
+}
+
+export interface ICatalogItem {
+  id: number;
+  base_cost?: number | null;
+  remark_cost?: number | null;
+  locales: {
+    coordinator_cost?: number | null;
+    group: LocalesName;
+    name: LocalesName;
+  }
+}
+export interface ICatalogs {
+  data: ICatalogItem[]
+  meta: IMeta
+}
+
+export interface IConclusion {
+  deadline: string;
+  id: number | null;
+  project_id: number | null;
+  expert_full_name: string;
+  status: {
+    id: number
+    locales: {
+      name: LocalesName
+    }
+  }
+}
