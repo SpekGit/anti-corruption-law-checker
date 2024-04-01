@@ -342,3 +342,99 @@ function FolderPending() {//Side menu icon
         </svg>
     );
 }
+
+
+function FolderCompleted() { //Side menu icon
+    return (
+        <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3.5 17.5H17.5C17.9641 17.5 18.4092 17.3156 18.7374 16.9874C19.0656 16.6592 19.25 16.2141 19.25 15.75V7C19.25 6.53587 19.0656 6.09075 18.7374 5.76256C18.4092 5.43437 17.9641 5.25 17.5 5.25H10.5612C10.273 5.24851 9.98961 5.17584 9.73621 5.03846C9.48282 4.90108 9.26728 4.70323 9.10875 4.4625L8.39125 3.4125C8.23272 3.17177 8.01718 2.97392 7.76379 2.83654C7.51039 2.69916 7.22699 2.62649 6.93875 2.625H3.5C3.03587 2.625 2.59075 2.80937 2.26256 3.13756C1.93437 3.46575 1.75 3.91087 1.75 4.375V15.75C1.75 16.7125 2.5375 17.5 3.5 17.5Z" stroke="#0D152C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M1.75 8.75H19.25" stroke="#0D152C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+
+    );
+}
+function Globe() {
+    return (
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.5 13.75C10.9518 13.75 13.75 10.9518 13.75 7.5C13.75 4.04822 10.9518 1.25 7.5 1.25C4.04822 1.25 1.25 4.04822 1.25 7.5C1.25 10.9518 4.04822 13.75 7.5 13.75Z" stroke="#4ABD9B" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M1.25 7.5H13.75" stroke="#4ABD9B" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M7.5 1.25C9.0633 2.96147 9.95172 5.18252 10 7.5C9.95172 9.81748 9.0633 12.0385 7.5 13.75C5.9367 12.0385 5.04828 9.81748 5 7.5C5.04828 5.18252 5.9367 2.96147 7.5 1.25V1.25Z" stroke="#4ABD9B" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+    );
+}
+function PaperClip() {
+    return (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21.4398 11.0497L12.2498 20.2397C11.124 21.3655 9.59699 21.998 8.0048 21.998C6.41262 21.998 4.88565 21.3655 3.7598 20.2397C2.63396 19.1138 2.00146 17.5869 2.00146 15.9947C2.00146 14.4025 2.63396 12.8755 3.7598 11.7497L12.3298 3.17967C13.0804 2.42778 14.0989 2.00485 15.1613 2.00391C16.2237 2.00297 17.2429 2.42411 17.9948 3.17467C18.7467 3.92523 19.1696 4.94374 19.1706 6.00613C19.1715 7.06853 18.7504 8.08778 17.9998 8.83967L9.4098 17.4097C9.03452 17.7849 8.52553 17.9958 7.9948 17.9958C7.46407 17.9958 6.95508 17.7849 6.5798 17.4097C6.20452 17.0344 5.99369 16.5254 5.99369 15.9947C5.99369 15.4639 6.20452 14.9549 6.5798 14.5797L15.0698 6.09967" stroke="white" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+    );
+}
+function Password() { //Input Login Password
+    return (
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M15.8333 9.16667H4.16667C3.24619 9.16667 2.5 9.91286 2.5 10.8333V16.6667C2.5 17.5871 3.24619 18.3333 4.16667 18.3333H15.8333C16.7538 18.3333 17.5 17.5871 17.5 16.6667V10.8333C17.5 9.91286 16.7538 9.16667 15.8333 9.16667Z"
+                stroke="#4ABD9B"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+            <path
+                d="M5.83333 9.16667V5.83333C5.83333 4.72827 6.27232 3.66846 7.05372 2.88706C7.83512 2.10565 8.89493 1.66667 9.99999 1.66667C11.1051 1.66667 12.1649 2.10565 12.9463 2.88706C13.7277 3.66846 14.1667 4.72827 14.1667 5.83333V9.16667"
+                stroke="#4ABD9B"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+        </svg>
+    );
+}
+function Persons() { //wrapper profile
+    return (
+        <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13.3332 18V16.3333C13.3332 15.4493 12.982 14.6014 12.3569 13.9763C11.7317 13.3512 10.8839 13 9.99984 13H4.99984C4.11578 13 3.26794 13.3512 2.64281 13.9763C2.01769 14.6014 1.6665 15.4493 1.6665 16.3333V18" stroke="white" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M7.49984 9.66667C9.34079 9.66667 10.8332 8.17428 10.8332 6.33333C10.8332 4.49238 9.34079 3 7.49984 3C5.65889 3 4.1665 4.49238 4.1665 6.33333C4.1665 8.17428 5.65889 9.66667 7.49984 9.66667Z" stroke="white" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M18.3335 18V16.3333C18.3329 15.5948 18.0871 14.8773 17.6346 14.2936C17.1821 13.7099 16.5486 13.293 15.8335 13.1083" stroke="white" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M13.3335 3.10834C14.0505 3.29192 14.686 3.70892 15.1399 4.2936C15.5937 4.87827 15.84 5.59736 15.84 6.3375C15.84 7.07765 15.5937 7.79674 15.1399 8.38141C14.686 8.96609 14.0505 9.38309 13.3335 9.56667" stroke="white" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+    );
+}
+function Person() { //wrapper profile
+    return (
+        <svg width="20" height="20" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M11.875 13.125V11.875C11.875 11.212 11.6116 10.5761 11.1428 10.1072C10.6739 9.63839 10.038 9.375 9.375 9.375H5.625C4.96196 9.375 4.32607 9.63839 3.85723 10.1072C3.38839 10.5761 3.125 11.212 3.125 11.875V13.125"
+                stroke="white"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+            <path
+                d="M7.5 6.875C8.88071 6.875 10 5.75571 10 4.375C10 2.99429 8.88071 1.875 7.5 1.875C6.11929 1.875 5 2.99429 5 4.375C5 5.75571 6.11929 6.875 7.5 6.875Z"
+                stroke="white"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+        </svg>
+    );
+}
+function Projects() {
+    return (
+        <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.833 5.54163H3.16634C2.29189 5.54163 1.58301 6.25051 1.58301 7.12496V15.0416C1.58301 15.9161 2.29189 16.625 3.16634 16.625H15.833C16.7075 16.625 17.4163 15.9161 17.4163 15.0416V7.12496C17.4163 6.25051 16.7075 5.54163 15.833 5.54163Z"
+                  stroke="white" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M12.6663 16.625V3.95833C12.6663 3.53841 12.4995 3.13568 12.2026 2.83875C11.9057 2.54181 11.5029 2.375 11.083 2.375H7.91634C7.49642 2.375 7.09369 2.54181 6.79676 2.83875C6.49982 3.13568 6.33301 3.53841 6.33301 3.95833V16.625" stroke="white" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+    );
+}
+function Recycle() {
+    return (
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.875 1.25V5H5.625" stroke="white" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M13.125 7.50001C13.124 6.41458 12.809 5.35262 12.218 4.44222C11.6269 3.53181 10.7851 2.81186 9.79406 2.36918C8.803 1.92651 7.70503 1.78003 6.63259 1.94741C5.56014 2.11479 4.55903 2.58889 3.75 3.31251L1.875 5"
+                  stroke="white" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M13.125 13.75V10H9.375" stroke="white" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M1.875 7.5C1.87599 8.58543 2.191 9.64739 2.78203 10.5578C3.37307 11.4682 4.21488 12.1881 5.20594 12.6308C6.197 13.0735 7.29497 13.22 8.36741 13.0526C9.43986 12.8852 10.441 12.4111 11.25 11.6875L13.125 10"
+                  stroke="white" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+    );
+}
