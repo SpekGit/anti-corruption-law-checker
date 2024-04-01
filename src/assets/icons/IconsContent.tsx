@@ -139,3 +139,82 @@ function DatePickerCalendar() {
 );
 }
 
+
+function Delete() {
+    return (
+        <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <path
+                d="M16 21V19C16 17.9391 15.5786 16.9217 14.8284 16.1716C14.0783 15.4214 13.0609 15 12 15H6C4.93913 15 3.92172 15.4214 3.17157 16.1716C2.42143 16.9217 2 17.9391 2 19V21"
+                stroke="#EF6262"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+            <path
+                d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z"
+                stroke="#EF6262"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+            <path
+                d="M17 8L22 13"
+                stroke="#EF6262"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+            <path
+                d="M22 8L17 13"
+                stroke="#EF6262"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+        </svg>
+    );
+}
+function DownLoad() {
+    return (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="#2147A7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M7 10L12 15L17 10" stroke="#2147A7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M12 15V3" stroke="#2147A7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+    );
+}
+function Edit() { //Edit pen anywhere
+    return (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 20H21" stroke="#4ABD9B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M16.5 3.49998C16.8978 3.10216 17.4374 2.87866 18 2.87866C18.2786 2.87866 18.5544 2.93353 18.8118 3.04014C19.0692 3.14674 19.303 3.303 19.5 3.49998C19.697 3.69697 19.8532 3.93082 19.9598 4.18819C20.0665 4.44556 20.1213 4.72141 20.1213 4.99998C20.1213 5.27856 20.0665 5.55441 19.9598 5.81178C19.8532 6.06915 19.697 6.303 19.5 6.49998L7 19L3 20L4 16L16.5 3.49998Z" stroke="#4ABD9B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+    );
+}
+function Email() {//Input Login Email
+    return (
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M10 13.3333C11.841 13.3333 13.3333 11.8409 13.3333 10C13.3333 8.15905 11.841 6.66667 10 6.66667C8.15906 6.66667 6.66667 8.15905 6.66667 10C6.66667 11.8409 8.15906 13.3333 10 13.3333Z"
+                stroke="#4ABD9B"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+            <path
+                d="M13.3333 6.66667V10.8333C13.3333 11.4964 13.5967 12.1323 14.0656 12.6011C14.5344 13.0699 15.1703 13.3333 15.8333 13.3333C16.4964 13.3333 17.1323 13.0699 17.6011 12.6011C18.0699 12.1323 18.3333 11.4964 18.3333 10.8333V10C18.3332 8.11919 17.6969 6.29373 16.5277 4.82044C15.3586 3.34715 13.7255 2.31269 11.8939 1.88525C10.0623 1.45781 8.13994 1.66253 6.43945 2.46614C4.73897 3.26974 3.36033 4.62496 2.52771 6.31144C1.6951 7.99791 1.45747 9.91645 1.85347 11.7551C2.24947 13.5937 3.25581 15.2444 4.70886 16.4386C6.1619 17.6328 7.97619 18.3003 9.85672 18.3326C11.7373 18.365 13.5734 17.7602 15.0667 16.6167"
+                stroke="#4ABD9B"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+        </svg>
+    );
+}
+
