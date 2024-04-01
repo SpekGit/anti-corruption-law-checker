@@ -438,3 +438,97 @@ function Recycle() {
         </svg>
     );
 }
+
+
+function Reports() {// reports navbar icon
+    return (
+        <svg
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <path
+                d="M12.0835 1.6665H5.00016C4.55814 1.6665 4.13421 1.8421 3.82165 2.15466C3.50909 2.46722 3.3335 2.89114 3.3335 3.33317V16.6665C3.3335 17.1085 3.50909 17.5325 3.82165 17.845C4.13421 18.1576 4.55814 18.3332 5.00016 18.3332H15.0002C15.4422 18.3332 15.8661 18.1576 16.1787 17.845C16.4912 17.5325 16.6668 17.1085 16.6668 16.6665V6.24984L12.0835 1.6665Z"
+                stroke="white"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+            <path
+                d="M11.6665 1.6665V6.6665H16.6665"
+                stroke="white"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+            <path
+                d="M13.3332 10.8335L10.4165 13.7502L8.74984 12.0835L6.6665 14.1668"
+                stroke="white"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+        </svg>
+    );
+}
+function Search() {
+    return (
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M9.16667 15.8333C12.8486 15.8333 15.8333 12.8486 15.8333 9.16667C15.8333 5.48477 12.8486 2.5 9.16667 2.5C5.48477 2.5 2.5 5.48477 2.5 9.16667C2.5 12.8486 5.48477 15.8333 9.16667 15.8333Z"
+                stroke="#0D152C"
+                strokeWidth="1.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+            <path d="M17.5 17.5L13.875 13.875" strokeWidth="1.2" stroke="#0D152C" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+    );
+}
+function Success() { //modal success!
+    return (
+        <svg width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M29 53.1668C42.3472 53.1668 53.1666 42.3474 53.1666 29.0002C53.1666 15.6529 42.3472 4.8335 29 4.8335C15.6527 4.8335 4.83331 15.6529 4.83331 29.0002C4.83331 42.3474 15.6527 53.1668 29 53.1668Z" stroke="#4ABD9B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M21.75 28.9998L26.5833 33.8332L36.25 24.1665" stroke="#4ABD9B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+    );
+}
+
+
+const IconsContent = {
+    AddProject,
+    ArrowDown,
+    Ask,
+    BellRing,
+    Calculator,
+    Catalogs,
+    Close,
+    Conclusions,
+    CoverLetters,
+    DatePickerCalendar,
+    Delete,
+    DownLoad,
+    Edit,
+    Email,
+    Error,
+    EyeView,
+    EyeClosed,
+    File,
+    FileSignature,
+    Filter,
+    Folder,
+    FolderCompleted,
+    FolderAccepted,
+    FolderPending,
+    Globe,
+    PaperClip,
+    Password,
+    Person,
+    Projects,
+    Recycle,
+    Reports,
+    Persons,
+    Search,
+    Success
+};
+
+export default IconsContent;
