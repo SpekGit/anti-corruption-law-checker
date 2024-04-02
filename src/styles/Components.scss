@@ -449,3 +449,61 @@
     }
   }
 }
+
+//--------Accordion Styles-----
+.accordion_wrapper {
+  margin: 10px 0 25px 0;
+  padding: 0 10px;
+  p {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  .textarea,
+  textarea {
+    border: 1px solid $primary;
+    border-radius: $radius;
+    padding: $padding;
+    min-height: 40px;
+    p {
+      font-weight: 400;
+    }
+  }
+  textarea {
+    min-height: 70px;
+  }
+  .rdw-editor {
+    &-wrapper {
+      border: 1px solid $primary;
+      padding: 10px 20px;
+      background-color: white;
+      border-radius: $radius;
+      .public-DraftEditor-content {
+        overflow-y: auto;
+      }
+      .rdw-dropdown-wrapper {
+        height: 22px;
+      }
+    }
+    &-toolbar {
+      background-color: rgb(196, 194, 194);
+    }
+    &-main {
+      overflow: hidden;
+      height: 200px;
+    }
+
+  }
+  .rdw-embedded-wrapper {
+    display: none;
+  }
+  .rdw-emoji-wrapper {
+    display: none;
+  }
+  .rdw-image-wrapper {
+    display: none;
+  }
+
+}
+
+//--------WysivygStyles------
