@@ -1,0 +1,135 @@
+.c-btn {
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 14px;
+    font-family: "Montserrat";
+    white-space: nowrap;
+    border: none;
+    gap: 10px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: white;
+    background-color:rgba($color:gray, $alpha: 0.5);
+    svg{
+      path{
+        stroke:white
+      }
+    }
+    width: fit-content;
+    @media(max-width:1200px) {
+        font-size: 12px;
+      }
+}
+.c-btn-left{
+  border-radius: 0;
+  border-top-left-radius: 10px;
+}
+.c-btn-right{
+border-radius: 0;
+  border-top-right-radius: 10px;
+}
+.c-btn-green{
+  background-color: $green;
+  transition: $transition;
+ 
+}
+.c-btn-greenLight{
+  background-color: rgb(0 128 81 / 52%);
+  transition: $transition;
+
+}
+.c-btn-secondary{
+  background-color: $secondary;
+}
+.c-btn-primary{
+  background-color: $primary;
+  transition: $transition;
+}
+.c-btn-orange{
+  background-color: $orange;
+  transition: $transition;
+}
+.c-btn-blue{
+  background-color: $blue;
+  transition: $transition;
+}
+.c-btn-red{
+  background-color: $red;
+  transition: $transition;
+}
+.c-btn-lightBlue{
+  background-color: $lightBlue;
+}
+.c-btn-purple{
+  background-color: $purple;
+}
+.c-btn-assigned{
+  border: 2px solid purple;
+  color: purple;
+  background-color: white;
+  margin-right: 100px;
+  svg{
+    max-width: 20px;
+    max-height: 20px;
+    path{
+      stroke: purple;
+    }
+  }
+}
+.c-btn-accordion{
+  width: 100%;
+  white-space:normal;
+  min-height: 50px;
+  justify-content: space-between;
+  padding: 10px 15px;
+  &__controll{
+    min-width: 220px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    button{
+      padding: 5px 10px;
+      font-size: 12px;
+      font-weight: 400;
+    }
+  }
+  svg{
+    transition: $transition;
+  }
+  &__arrow-rotate{
+    svg{
+      rotate: 180deg;
+      transition: $transition;
+    }
+  }
+}
+
+input,
+textarea {
+    border: none;
+	border-radius: 10px;
+	font-size: 14px;
+	line-height: 14px;
+	padding: 10px 20px;
+	font-weight: 400;
+	width: 100%;
+	outline: none;
+	font-family: "Montserrat";
+  color: $primary;
+  resize: none;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
