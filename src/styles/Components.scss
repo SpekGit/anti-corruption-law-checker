@@ -284,3 +284,168 @@
     }
   }
 }
+
+
+//---------ReactDatePicker----
+.calendar {
+  border-radius: $radius;
+  position: relative;
+  svg {
+    position: absolute;
+    top: 7px;
+    right: 10px;
+  }
+}
+.modal {
+  &__wrapper {
+    position: fixed;
+    z-index: 2;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h3 {
+      margin: 20px 0;
+    }
+  }
+  &__content {
+    min-width: 600px;
+    max-width: 1000px;
+    padding: 20px;
+    background-color: white;
+    border-radius: $radius;
+    height: fit-content;
+  }
+  &__form {
+    padding-left: 20px;
+    textarea {
+      border: 1px solid $primary;
+      border-radius: $radius;
+      padding: $padding;
+      min-height: 60px;
+      margin-top: 15px;
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+
+  &__main {
+    overflow-y: auto;
+    padding-right: 15px;
+    max-height: 80vh;
+    &::-webkit-scrollbar {
+      width: 7px;
+      background-color: #f9f9f9;
+      &-thumb {
+        background-color: #4abd9b;
+        border-radius: 3px;
+        background-clip: content-box;
+      }
+    }
+  }
+  &__expert-preloader {
+    &--wrapper {
+      position: relative;
+    }
+    &--div {
+      position: absolute;
+      border: 5px solid transparent;
+      border-radius: 50%;
+      border-top-color: transparent !important;
+      border-bottom-color: transparent !important;
+      top: 27px;
+      right: 10px;
+      animation: spin 1s linear infinite;
+      height: 25px;
+      width: 25px;
+      border-left-color: #4abd9b;
+    }
+  }
+  &__heading {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    margin: 15px 0;
+    text-align: center;
+  }
+  &__icon {
+    text-align: center;
+    margin: 20px;
+  }
+  &__ask {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  &__error-message {
+    color: red;
+    font-size: 400;
+    text-align: center;
+    margin: 20px;
+  }
+  &__buttons {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    justify-content: center;
+    .c-btn {
+      padding: 10px 20px;
+    }
+  }
+  &__ai {
+    padding: 5px 20px;
+    textarea {
+      max-width: 70%;
+      height: 100px;
+      border: 1px solid $primary;
+    }
+    &--header {}
+    &--content {}
+    &--voiting {
+      display: flex;
+      max-width: 50%;
+      margin: 20px;
+
+      p {
+        display: flex;
+        flex: 1;
+        align-items: center;
+
+        input {
+          margin-top: 0;
+          margin-right: 15px;
+          width: fit-content;
+          accent-color: var(--color-aquamarine);
+          width: 20px;
+          height: 20px;
+
+          &:checked {
+            border: 1px solid var(--color-aquamarine);
+          }
+        }
+
+        label {
+          margin: 0;
+          font-size: 16px;
+          line-height: 19px;
+        }
+      }
+    }
+  }
+  &__eds {
+    max-width: 600px;
+    .form-item {
+      max-width: 300px;
+    }
+    .form-item__file {
+      max-width: 100%;
+    }
+  }
+}
